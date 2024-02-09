@@ -1,7 +1,19 @@
+@mixin large {
+    @media (min-width: 87.5em) {
+        @content;
+    }
+}
+
+
+
 .element {
     background-color: gray;
     aspect-ratio: 1 / 1;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.6em;
+    @include large(){
+        font-size: 0.75rem;
+        color: red;
+    }
 }
 
 $var : 0;
@@ -14,4 +26,6 @@ $lengthTypes : calc(360 / length($types));
 
     $var : $var + $lengthTypes;
 }
+
+
 

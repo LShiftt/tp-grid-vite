@@ -1,3 +1,9 @@
 @import 'vendors/reset.scss';
 @import 'vendors/element.scss';
 @import 'vendors/table.scss';
+
+@mixin large {
+    @media (min-width: 1400px) {
+        @content;
+    }
+}
