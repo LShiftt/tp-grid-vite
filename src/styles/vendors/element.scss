@@ -10,22 +10,52 @@
     background-color: gray;
     aspect-ratio: 1 / 1;
     font-size: 0.6em;
-    @include large(){
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include large() {
         font-size: 0.75rem;
         color: red;
+
+
     }
 }
+
+// part 5 
+// [data-group="1"] {
+//     grid-column: 1;
+// }
+
+// [data-period="1"] {
+//     grid-row: 1;
+// }
+
+@for $i from 1 through 18 {
+    [data-group='#{$i}'] {
+        grid-column: $i;
+    }
+}
+
+@for $i from 1 through 7 {
+    [data-period='#{$i}'] {
+        grid-row: $i;
+    }
+}
+
+
+
+
 
 $var : 0;
 $types: "alkaliMetal" "lanthanide" "nobleGas" "transitionMetal" "postTransitionMetal" "alkalineEarthMetal" "actinide" "metalloid" "otherNonMetal";
 $lengthTypes : calc(360 / length($types));
+
 @each $type in $types {
     .element--#{$type} {
         background-color: hsl($var 50% 60%);
     }
 
-    $var : $var + $lengthTypes;
+    $var : $var +$lengthTypes;
 }
-
-
-
