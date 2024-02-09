@@ -1,8 +1,14 @@
-.element{
-    color: lightgray;
+.element {
+    background-color: gray;
 }
-$types: alkaliMetal lanthanide nobleGas transitionMetal postTransitionMetal alkalineEarthMetal actinide metalloid otherNonMetal;
-@each $type in $types{
-    color: hsl(120deg 75% 25%);
-    $maValeur =;//iciiiiiiiiiii
+
+$var : 0;
+$types: "alkaliMetal" "lanthanide" "nobleGas" "transitionMetal" "postTransitionMetal" "alkalineEarthMetal" "actinide" "metalloid" "otherNonMetal";
+$lengthTypes : calc(360 / length($types));
+@each $type in $types {
+    .element--#{$type} {
+        background-color: hsl($var 50% 60%);
+    }
+
+    $var : $var + $lengthTypes;
 }
