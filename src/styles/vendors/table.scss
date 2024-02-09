@@ -1,0 +1,15 @@
+.table{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+
+    .element{
+        font-size: 2rem;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+}

@@ -1,5 +1,7 @@
 .element {
     background-color: gray;
+    aspect-ratio: 1 / 1;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 $var : 0;
@@ -12,3 +14,4 @@ $lengthTypes : calc(360 / length($types));
 
     $var : $var + $lengthTypes;
 }
+
